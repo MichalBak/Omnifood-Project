@@ -1,55 +1,59 @@
-/* 
-
+/*
 --- 01 TYPOGRAPHY SYSTEM
 
-- FONT SIZES (px)
+- Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-- Font weights:
+- Font weights
 Default: 400
 Medium: 500
 Semi-bold: 600
 Bold: 700
 
-- Line heights:
+- Line heights
 Default: 1
 Small: 1.05
+Medium: 1.2
 Paragraph default: 1.6
-Large: 1.8
 
 - Letter spacing
-- 0.75px;
-- 0.5px
+-0.5px
+0.75px
 
 --- 02 COLORS
 
 - Primary: #e67e22
-- Tints: #fdf2e9, #fae5d3, #eb984e
-- Shades: #cf711f, #45260a
+- Tints:
+#fdf2e9
+#fae5d3
+#eb984e
+
+- Shades: 
+#cf711f
+#45260a
+
 - Accents:
 - Greys
 
 #888
-#767676 (lightest grey allowed on #fdf2e9)
+#767676 (lightest grey allowed on #fff)
 #6f6f6f (lightest grey allowed on #fdf2e9)
 #555
 #333
-#888
 
 --- 05 SHADOWS
 
-box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
 
-Dafeult: 9px
+Default: 9px
 Medium: 11px
 
 --- 07 WHITESPACE
 
-- SPACING SYSTEM (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128      
-
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
 * {
@@ -63,7 +67,6 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
-  overflow-x: hidden;
 }
 
 body {
@@ -71,14 +74,12 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
-
-  /* Works if there is nothing absolutelty positioned in relation to body */
-  overflow-x: hidden;
 }
 
-/*****************************/
-/* GENERAL REUSABLE COMPONENTS */
-/*****************************/
+/**************************/
+/* GENRAL REUSABLE COMPONENTS */
+/**************************/
+
 .container {
   /* 1140px */
   max-width: 120rem;
@@ -88,8 +89,10 @@ body {
 
 .grid {
   display: grid;
-  row-gap: 9.6rem;
   column-gap: 6.4rem;
+  row-gap: 9.6rem;
+
+  /* margin-bottom: 9.6rem; */
 }
 
 /* .grid:last-child {
@@ -100,21 +103,24 @@ body {
   margin-bottom: 9.6rem;
 }
 
-.grid-center-v {
-  align-items: center;
-}
-
 .grid--2-cols {
   grid-template-columns: repeat(2, 1fr);
 }
+
 .grid--3-cols {
   grid-template-columns: repeat(3, 1fr);
 }
+
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
+
 .grid--5-cols {
   grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
 }
 
 .heading-primary,
@@ -197,7 +203,7 @@ body {
 .btn--outline:active {
   background-color: #fdf2e9;
 
-  /* border: 2px solid #fff; */
+  /* border: 3px solid #fff; */
 
   /* Trick to add border inside */
   box-shadow: inset 0 0 0 3px #fff;
@@ -217,11 +223,11 @@ body {
 
 .link:link,
 .link:visited {
+  display: inline-block;
   color: #e67e22;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
-  padding-bottom: 0.2rem;
-  display: inline-block;
+  padding-bottom: 2px;
   transition: all 0.3s;
 }
 
@@ -243,7 +249,6 @@ body {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  line-height: 1.2;
 }
 
 .list-icon {
@@ -260,7 +265,6 @@ body {
 }
 
 /* HELPER/SETTINGS CLASSES */
-
 .margin-right-sm {
   margin-right: 1.6rem !important;
 }
